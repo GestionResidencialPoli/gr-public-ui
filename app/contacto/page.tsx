@@ -93,9 +93,16 @@ export default function ContactPage() {
           </p>
         )}
         {state === "error" && (
-          <p className="feedback error" role="alert">
-            {error}
-          </p>
+          <div className="feedback error" role="alert">
+            <span>{error}</span>
+            <button
+              type="button"
+              aria-label="Cerrar aviso"
+              onClick={() => setState("idle")}
+            >
+              ×
+            </button>
+          </div>
         )}
       </form>
     </section>
