@@ -1,5 +1,6 @@
 import "./styles.css";
 import Link from "next/link";
+import { AUTH_UI_URL } from "./config";
 
 export default function Layout({
   children,
@@ -17,6 +18,9 @@ export default function Layout({
             <Link href="/contacto">Contacto</Link>
             <Link href="/terminos">Términos</Link>
             <Link href="/privacidad">Privacidad</Link>
+            <a className="button primary" href={AUTH_UI_URL}>
+              Iniciar sesión
+            </a>
           </nav>
         </header>
         <main>{children}</main>
