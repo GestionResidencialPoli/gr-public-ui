@@ -1,6 +1,6 @@
 import "./styles.css";
 import Link from "next/link";
-import { AUTH_UI_URL } from "./config";
+import { PublicNavigation } from "./navigation";
 
 export default function Layout({
   children,
@@ -8,22 +8,18 @@ export default function Layout({
   return (
     <html lang="es">
       <body>
+        <a className="public-skip" href="#main-content">
+          Saltar al contenido
+        </a>
         <header>
           <Link href="/" className="brand">
             Gestión Residencial
           </Link>
-          <nav aria-label="Navegación principal">
-            <Link href="/sobre-nosotros">Sobre nosotros</Link>
-            <Link href="/faq">Preguntas frecuentes</Link>
-            <Link href="/contacto">Contacto</Link>
-            <Link href="/terminos">Términos</Link>
-            <Link href="/privacidad">Privacidad</Link>
-            <a className="button primary" href={AUTH_UI_URL}>
-              Iniciar sesión
-            </a>
-          </nav>
+          <PublicNavigation />
         </header>
-        <main>{children}</main>
+        <main id="main-content" tabIndex={-1}>
+          {children}
+        </main>
         <footer>
           Proyecto académico · Información y textos legales pendientes de
           validación institucional

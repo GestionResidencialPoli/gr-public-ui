@@ -60,15 +60,15 @@ export default function ContactPage() {
       <form className="form" onSubmit={submit}>
         <label>
           Nombre
-          <input name="nombre" required minLength={2} maxLength={120} />
+          <input name="nombre" autoComplete="name" required minLength={2} maxLength={120} />
         </label>
         <label>
           Correo electrónico
-          <input name="email" type="email" required />
+          <input name="email" autoComplete="email" type="email" required />
         </label>
         <label>
           Teléfono <span>(opcional)</span>
-          <input name="telefono" maxLength={30} />
+          <input name="telefono" type="tel" autoComplete="tel" maxLength={30} />
         </label>
         <label>
           Mensaje
